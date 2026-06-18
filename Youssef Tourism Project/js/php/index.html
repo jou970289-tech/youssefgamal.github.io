@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حجز العمرة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ <!-- زر العودة للقائمة الرئيسية -->
+<a href="../../../index.html" class="home-button">🏠 الرئيسية</a>
+
+
+<style>
+  .home-button {
+    position: fixed;          
+    top: 20px;                
+    left: 20px;               
+    background: linear-gradient(135deg, #00aaff, #4bcc0083);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;      
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(217, 255, 0, 0.774);
+    z-index: 999;             
+    animation: move3d 4s infinite linear; /* حركة تلقائية */
+  }
+  .home-button:hover {
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.993);
+    animation: move3d 1s infinite linear; /* حركة مستمرة */}
+
+  /* حركة 3D مستمرة */
+  @keyframes move3d {
+    0%   { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+    25%  { transform: rotateX(15deg) rotateY(10deg) scale(1.05); }
+    50%  { transform: rotateX(0deg) rotateY(20deg) scale(1); }
+    75%  { transform: rotateX(-15deg) rotateY(-10deg) scale(1.05); }
+    100% { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+  }
+
+  /* 📱 للشاشات الصغيرة (موبايل) */
+  @media (max-width: 600px) {
+    .home-button {
+      font-size: 0.85rem;
+      padding: 10px 15px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>خدمات العمرة</h1>
+            <p>املأ البيانات أدناه لحجز رحلتك</p>
+        </header>
+
+        <form id="umrahForm" action="./send.php" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="fullName">الاسم الكامل:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك كاملاً" required>
+                                <small id="nameError" class="error-message"></small>
+
+                <div class="form-group">
+                
+            </div>
+            
+                
+
+            </div>
+            
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" placeholder="مثال: 20xxxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" min="18" placeholder="أدخل عمرك" required min="18">
+            </div>
+
+            <div class="form-group">
+                <label for="days">عدد أيام الحجز:</label>
+                <input type="number" id="days" name="days" min="1" placeholder="أدخل عدد أيام الحجز" required min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="passport">صورة الجواز:</label>
+                <input type="file" id="passport" name="passport" accept="image/*" required>
+                <div id="passportPreview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="photo">صورة شخصية (خلفية بيضاء):</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <div id="photoPreview"></div>
+            </div>
+
+            <p class="note">⚠️ يجب أن تكون جميع البيانات صحيحة ومكتملة ليتم تأكيد الحجز.</p>
+            <button type="submit" class="submit-btn">إرسال طلب الحجز</button>
+        </form>
+        
+
+        <div id="successMessage" class="success-message" style="display:none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

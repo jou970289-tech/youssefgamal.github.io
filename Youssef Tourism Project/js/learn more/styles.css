@@ -1,0 +1,73 @@
+/* للشاشات الصغيرة (موبايل) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;   /* يخلي العناصر فوق بعض */
+    text-align: center;       /* يوسّط النص */
+  }
+
+  .text-box {
+    max-width: 100%;          /* النص ياخد العرض كله */
+    margin-bottom: 20px;      /* مسافة بين النص والصورة */
+  }
+
+  .text-box h1 {
+    font-size: 2rem;          /* تصغير حجم العنوان */
+  }
+
+  .text-box p {
+    font-size: 1rem;          /* تصغير النص */
+  }
+
+  .image-box img {
+    max-height: 50vh;         /* تصغير ارتفاع الصورة */
+    width: 100%;              /* الصورة تاخد عرض الشاشة */
+
+  }
+}
+.text-box button {
+  position: fixed;        /* يخلي الزرار ثابت */
+  bottom: 20px;           /* يثبت الزرار عند أسفل الشاشة */
+  right: 80px;            /* يثبت الزرار ناحية اليمين */
+  padding: 12px 25px;/* حجم الزرار */
+  background: linear-gradient(45deg, #3cff00, #78b3e2);/* لون متدرج جذّاب */
+  border: none;/* إزالة الحدود الافتراضية */
+  color: #fff;/* لون النص */
+  cursor: pointer;/* تغيير المؤشر عند المرور */
+  font-size: 1rem;/* حجم الخط */
+  border-radius: 8px;/* حواف مستديرة */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;           /* يخلي الزرار فوق كل العناصر */
+}
+
+.text-box button:hover {
+  transform: rotateX(15deg) rotateY(10deg) scale(1.1); /* حركة 3D */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+body {
+  margin: 0;
+  height: 100vh;                 /* يخلي الصفحة تاخد طول الشاشة */
+  display: flex;                 /* تفعيل Flexbox */
+  justify-content: center;       /* يوسّط أفقياً */
+  align-items: center;           /* يوسّط عمودياً */
+  background-color: #000;
+}
+
+.image-box {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+}
+
+.image-box:hover {
+  transform: scale(1.05) rotateY(10deg); /* تأثير 3D */
+  box-shadow: 0 20px 40px rgba(243, 0, 0, 0.8);
+}

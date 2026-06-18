@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(#111,#696666);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+    
+}
+
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 183, 255, 0.541);
+    position: absolute;
+    z-index: -1; /*لجعل العنصر خلف المحتوى */
+    clip-path: circle(40% at right 70%)/*الدائرة وتحكماتها */;
+
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    background: rgba(255,255,255,0.1);/*لون خلفية الحاوية مع شفافية */
+    border-radius: 20px;
+    overflow: hidden;/*لإخفاء أي محتوى يتجاوز حدود الحاوية */
+    }
+
+ nav{
+    display: flex;/*لجعل العناصر في صف واحد */
+    justify-content: space-between;/*لجعل العناصر في صف واحد وتوزيعها بالتساوي */
+    align-items: center;/*لجعل العناصر في صف واحد وتوزيعها بالتساوي */
+    width: 80%;/*80% من عرض الحاوية */
+    margin:  auto;/*لجعل القائمة في منتصف الصفحة */
+    padding: 20px 0;/*المسافة بين القائمة والمحتوى */
+    z-index: 100;/*لجعل القائمة فوق المحتوى */
+
+ }
+ nav .logo{ /*تصميم شعار الموقع في القائمة */
+    color: #02e7c1;/*لون النص */
+    text-decoration: none;/*لإزالة الخط السفلي من الرابط */
+    font-size: 32px;/*حجم الخط */
+    text-transform: uppercase;/*تحويل النص إلى حروف كبيرة */
+    letter-spacing: 1px;/*المسافة بين الحروف */
+    font-weight: 700;/*سمك الخط */
+   
+
+ }
+ nav ul li{/*تصميم عناصر القائمة */
+    display: inline-block;/*لجعل العناصر في صف واحد */
+    
+    margin: 0  16px;/*المسافة بين العناصر */
+    margin: 0 15px;/*المسافة بين العناصر */
+
+ }
+    nav ul li a{/*تصميم الروابط في القائمة */
+        color: #fff;/*لون النص */
+        text-decoration: none;/*لإزالة الخط السفلي من الروابط */
+        font-size: 18px;/*حجم الخط */
+        font-weight: 500;/*سمك الخط */
+        text-transform: uppercase;/*تحويل النص إلى حروف كبيرة */
+        letter-spacing: 5px;/*المسافة بين الحروف */
+        }
+    nav ul li a:hover{/*عند المرور على الرابط */
+        color: #ff0;/*تغيير اللون عند المرور عليه */
+        transition: 0.3s;/*لجعل التأثير سلس */
+     }
+
+     .content{/*تصميم المحتوى الرئيسي */
+        display: flex;/*لجعل الصورة والنص في صف واحد */
+        justify-content: space-between;/*لجعل المحتوى يتوزع بالتساوي بين الصورة والنص */
+        align-items: center;    /* هنا هتل الصورة والكام فى النصف */
+        height: 100%;/*لجعل المحتوى يأخذ كامل ارتفاع الحاوية */
+        width: 80%;/*80% من عرض الحاوية */
+        margin: auto;/*لجعل المحتوى في منتصف الصفحة */
+       }
+
+  .content .text h2{
+    font-size: 40px;/*حجم الخط*/
+    text-transform: uppercase;/*تحويل النص إلى حروف كبيرة*/
+    font-weight: 700;/*سمك الخط*/
+    letter-spacing: 2px;/*المسافة بين الحروف*/
+
+    
+  }
+  .content .text p{
+    font-size: 18px;/*حجم الخط*/
+    line-height: 25px;/*المسافة بين السطور*/
+    margin: 20px 0;/*المسافة بين الفقرات*/
+    letter-spacing: 1px;/*المسافة بين الحروف*/
+   
+  }
+   .content .image{
+    width: 40%;/*40% من عرض المحتوى */
+
+   }
+   .content .image img{
+    width: 400px;/*لجعل الصورة تأخذ كامل عرض الحاوية */
+    border-radius: 20px;/*لجعل حواف الصورة مستديرة */
+   }
+
+@media (min-width:650px)  and (max-width:1150px){/*لجعل التصميم متجاوب بين 650 و 1150 بكسل */
+  .content .image img{
+    width: 330px;/*لجعل الصورة أصغر في الشاشات المتوسطة */
+   }
+    
+}
+ @media (max-width:950px){
+    .content, nav{
+         font-size: 16px;
+          text-align: center;
+          padding: 0 20px;
+        flex-direction: column;/*لجعل المحتوى في عمود واحد في الشاشات الصغيرة */
+        justify-content: center;/*لجعل المحتوى في منتصف الصفحة */
+        text-align: center;/*لجعل النص في منتصف الصفحة */
+    }
+    .content .image, .content .text{
+        width: 100%;/*لجعل الصورة والنص يأخذان كامل عرض الحاوية في الشاشات الصغيرة */
+        font-size: 14px;/*لجعل حجم الخط أصغر في الشاشات الصغيرة */
+
+        height: auto;/*لجعل ارتفاع الصورة يتناسب مع عرضها في الشاشات الصغيرة */
+
+
+    }
+    body::after{
+        
+        clip-path: circle(50% at bottom)/*تعديل موقع الدائرة في الشاشات الصغيرة */;
+
+
+    }
+
+ }
+ @media (max-width:650px){
+    .content, nav{
+        
+        display: flex;/*لجعل المحتوى في عمود واحد في الشاشات الصغيرة */
+         font-size: 16px;
+         text-align: center;
+         padding: 0 20px; 
+        flex-direction: column;/*لجعل المحتوى في عمود واحد في الشاشات الصغيرة */
+        justify-content: center;/*لجعل المحتوى في منتصف الصفحة */
+        text-align: center;/*لجعل النص في منتصف الصفحة */
+    }
+    .content .image img{
+        width: 80%;/*لجعل الصورة تأخذ كامل عرض الحاوية في الشاشات الصغيرة جدًا */
+        height: auto;/*لجعل ارتفاع الصورة يتناسب مع عرضها */
+        clip-path: circle(50% at center)/*تعديل شكل الصورة في الشاشات الصغيرة جدًا */;
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: auto;
+
+
+    }
+    
+ }
+ 
+
+ 

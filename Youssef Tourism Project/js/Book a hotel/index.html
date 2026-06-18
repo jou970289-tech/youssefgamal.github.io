@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض فنادق مكة والمدينة</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <!-- زر العودة للقائمة الرئيسية -->
+<a href="../../../index.html" class="home-button">🏠 الرئيسية</a>
+
+<style>
+  .home-button {
+    position: fixed;          
+    top: 20px;                
+    left: 20px;               
+    background: linear-gradient(135deg, #00aaff, #4bcc0083);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;      
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(217, 255, 0, 0.774);
+    z-index: 999;             
+    animation: move3d 4s infinite linear; /* حركة تلقائية */
+  }
+  .home-button:hover {
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.993);
+    animation: move3d 1s infinite linear; /* حركة مستمرة */}
+
+  /* حركة 3D مستمرة */
+  @keyframes move3d {
+    0%   { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+    25%  { transform: rotateX(15deg) rotateY(10deg) scale(1.05); }
+    50%  { transform: rotateX(0deg) rotateY(20deg) scale(1); }
+    75%  { transform: rotateX(-15deg) rotateY(-10deg) scale(1.05); }
+    100% { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+  }
+
+  /* 📱 للشاشات الصغيرة (موبايل) */
+  @media (max-width: 600px) {
+    .home-button {
+      font-size: 0.85rem;
+      padding: 10px 15px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+  <header>
+    <h1>رحلتك إلى مكة والمدينة</h1>
+    <p>استكشف جمال وأصالة هذه البقاع</p>
+  </header>
+
+  
+
+  <main class="gallery-container">
+
+      <div class="image-card" data-image-id="2">
+      <img src="./images/2.jpg" alt="فندق هادئ في المدينة">
+      <div class="overlay">
+        <h2>فندق المدينة الراقي</h2>
+        <button onclick="showDetails(2)">عرض التفاصيل</button>
+      </div>
+    </div>
+
+    
+    <div class="image-card" data-image-id="1">
+      <img src="./images/1.jpg" alt="فندق فاخر في مكة">
+      <div class="overlay">
+        <h2>مقر شركة البكري اوفر سايز للسياحة</h2>
+        <button onclick="showDetails(1)">عرض التفاصيل</button>
+      </div>
+    </div>
+
+  
+
+    <div class="image-card" data-image-id="3">
+      <img src="./images/3.jpeg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(3)">عرض التفاصيل</button>
+      </div>
+    </div>
+    <div class="image-card" data-image-id="4">
+      <img src="./images/4.jpeg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(4)">عرض التفاصيل</button>
+      </div>
+    </div><div class="image-card" data-image-id="5">
+      <img src="./images/5.jpg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(5)">عرض التفاصيل</button>
+      </div>
+    </div>
+    <div class="image-card" data-image-id="6">
+      <img src="./images/6.jpg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(6)">عرض التفاصيل</button>
+      </div>
+    </div>
+    <div class="image-card" data-image-id="7">
+      <img src="./images/7.jpg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(7)">عرض التفاصيل</button>
+      </div>
+    </div>
+    <div class="image-card" data-image-id="8">
+      <img src="./images/8.jpg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(8)">عرض التفاصيل</button>
+      </div>
+    </div>
+    <div class="image-card" data-image-id="9">
+      <img src="./images/9.jpeg" alt="منظر طبيعي">
+      <div class="overlay">
+        <h2>منظر ساحر</h2>
+        <button onclick="showDetails(9)">عرض التفاصيل</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="details-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="صورة كبيرة">
+      <p id="modal-description"></p>
+      <button onclick="closeModal()">إغلاق</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

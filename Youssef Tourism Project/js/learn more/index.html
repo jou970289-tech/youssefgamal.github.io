@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  
+
+  <title>Avatar Website</title>
+  <!-- زر العودة للقائمة الرئيسية -->
+<a href="../../../index.html" class="home-button">🏠 الرئيسية</a>
+
+<style>
+  .home-button {
+    position: fixed;          
+    top: 20px;                
+    left: 20px;               
+    background: linear-gradient(135deg, #00aaff, #4bcc0083);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;      
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(217, 255, 0, 0.774);
+    z-index: 999;             
+    animation: move3d 4s infinite linear; /* حركة تلقائية */
+  }
+  .home-button:hover {
+    box-shadow: 0 12px 25px rgba(255, 0, 0, 0.993);
+    animation: move3d 1s infinite linear; /* حركة مستمرة */}
+
+  /* حركة 3D مستمرة */
+  @keyframes move3d {
+    0%   { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+    25%  { transform: rotateX(15deg) rotateY(10deg) scale(1.05); }
+    50%  { transform: rotateX(0deg) rotateY(20deg) scale(1); }
+    75%  { transform: rotateX(-15deg) rotateY(-10deg) scale(1.05); }
+    100% { transform: rotateX(0deg) rotateY(0deg) scale(1); }
+  }
+
+  /* 📱 للشاشات الصغيرة (موبايل) */
+  @media (max-width: 600px) {
+    .home-button {
+      font-size: 0.85rem;
+      padding: 10px 15px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .text-box {
+      max-width: 40%;
+      z-index: 2;
+      
+    }
+
+    .text-box h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .text-box p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .text-box button {
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #00aaff, #0077cc);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .text-box button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #0077cc, #00aaff);
+    }
+
+    .image-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-box img {
+      justify-self: center;
+      align-items: center;
+      width: 100%;              
+      max-height: 90vh;         
+      object-fit: cover;        
+      border-radius: 10px;
+      transition: transform 0.5s ease, filter 0.5s ease, opacity 0.8s ease;
+      opacity: 1;
+    }
+
+    .image-box img.fade {
+      opacity: 0; /* تأثير Fade-Out */
+    }
+
+    .image-box img:hover {
+      transform: scale(1.05);   
+      filter: brightness(1.2);  
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-box">
+     <!-- <h1>AVATAR</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>-->
+      <button onclick="changeImage()">Change Image</button>
+    </div>
+    <div class="image-box">
+      <img id="avatarImage" src="./img/1.jpg" alt="Avatar Image">
+    </div>
+  </div>
+
+  <script>
+    const images = ["./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg", "./img/9.jpg"];
+    let currentIndex = 0;
+
+    function changeImage() {
+      const img = document.getElementById("avatarImage");
+      img.classList.add("fade"); // يبدأ الـ Fade-Out
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        img.src = images[currentIndex];
+        img.classList.remove("fade"); // يرجع للصورة الجديدة مع Fade-In
+      }, 500); // نصف ثانية للتأثير
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
